@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Segmentation</title>
+</head>
+<body>
+    <h1>Customer Segmentation</h1>
+    <form action="/submit" method="post">
+        Age: <input type="number" name="age"><br>
+        Annual Income (k$): <input type="number" name="income"><br>
+        Spending Score (1-100): <input type="number" name="spending"><br>
+        <input type="submit" value="Add Customer">
+    </form>
+    <br>
+    <form action="/cluster" method="post">
+        Number of Clusters: <input type="number" name="num_clusters"><br>
+        <input type="submit" value="Cluster Customers">
+    </form>
+    <br>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+</body>
+</html>
